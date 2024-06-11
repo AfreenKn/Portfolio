@@ -2,6 +2,22 @@
 let menuIcon=document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
 
+let popup=document.getElementById('popup');
+
+        
+        function openPopup(){
+            document.getElementById("showmsg").style.visibility = "hidden";
+        popup.classList.add('open-popup');
+         }
+
+        function closePopup(){
+            document.getElementById("showmsg").style.visibility = "visible";
+    popup.classList.remove('open-popup');
+        }
+
+
+
+
 menuIcon.onclick =()=>{
     menuIcon.classList.toggle('bx-x');
     navbar.classList.toggle('active');
@@ -48,3 +64,6 @@ function scrollToSection(sectionId) {
 }
 
 
+
+
+ 
