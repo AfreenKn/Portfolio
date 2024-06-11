@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="style.css">
     <!-- box design -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+     
+     
 </head>
 <body>
     <!-- header design -->
@@ -58,7 +60,7 @@
 <section class="about" id="about">
     <h2 class="heading">About <span>Me</span><span class="animate scroll" style="--i:1;"></span></h2>
     <div class="about-img">
-        <img src="face.jpg" alt="">
+        <img src="img/face.jpg" alt="">
         <span class="circle-spin"></span>
         <span class="animate scroll" style="--i:2;"></span>
     </div>
@@ -212,45 +214,60 @@
     <form name="submit-to-google-sheet" >
         <div class="input-box">
             <div class="input-field">
-                <input type="text" name="Name" placeholder="Full Name" required>
+                <input type="text" name="Name" placeholder="Full Name" >
                 <span class="focus"></span>
             </div>
             
             <div class="input-field">
-                <input type="email"  name="Email" placeholder="Email Adress" required>
+                <input type="email"  name="Email" placeholder="Email Adress" >
                 <span class="focus"></span>
             </div>
             <span class="animate scroll" style="--i:2;"></span>
         </div>
 
 
+   
+
+
+
    <div class="input-box">
          <div class="input-field">
-            <input type="number" name="Number" placeholder="Mobile Number" required>
+            <input type="number" name="Number" placeholder="Mobile Number" >
             <span class="focus"></span>
         </div>
         
         <div class="input-field">
-            <input type="text" name="Subject" placeholder="Email Subject" required>
+            <input type="text" name="Subject" placeholder="Email Subject" >
             <span class="focus"></span>
         </div>
         <span class="animate scroll" style="--i:5;"></span>
     </div>
 
       <div class="textarea-field">
-        <textarea name="Message" id="" cols="30" rows="10" placeholder="Your Message" required></textarea>
+        <textarea name="Message" id="" cols="30" rows="10" placeholder="Your Message" ></textarea>
         <span class="focus"></span>
         <span class="animate scroll" style="--i:7;"></span>
       </div>
 
       <div class="btn-box btns">
-        <button type="submit" class="btn">Submit</button>
+        <button type="submit" id="showmsg" class="btn" onclick="openPopup()">Submit</button>
         <span class="animate scroll" style="--i:9;"></span>
-      </div>
-
-    </form>
+    
+    
+    <div class="popup" id="popup">
+        <img src="img/tick.jpg" alt="">
+        <h2>  Thank You!</h2>
+        <p> Your details has been successfully submitted .Thanks!  </p>
+        <button type="button" onclick="closePopup()" >OK</button>
+    </div>
+</div>
+</form>
 </section>
 
+
+ 
+   
+ 
 <!-- Footer design -->
 <footer class="footer">
     <div class="footer-text">
@@ -262,21 +279,28 @@
         <span class="animate scroll" style="--i:3;"></span> 
     </div>
 </footer>
-    <script src="index.js"></script>
+     <!-- sheet contact save -->
     <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbxoX8G6yblVBbllyOwyMo9mmYVcemDAPmEKqsS0i0niTxPAl-EZ3xark-mgtGS9ckzepA/exec'
         const form = document.forms['submit-to-google-sheet']
-      
+       
+
+
         form.addEventListener('submit', e => {
           e.preventDefault()
           fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => {
+            .then(response => { 
                 console.log('Success!', response);
-                window.location.reload();
-                alert('Thank you for your message!');
-            })
+                openPopup();
+                // window.location.reload(); 
+                
+        })
             .catch(error => console.error('Error!', error.message))
         })
+
+    
       </script>
+      
+      <script src="index.js"></script>
 </body>
 </html>
