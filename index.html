@@ -309,43 +309,47 @@
     </div>
 </footer>
      <!-- sheet contact save -->
-    <script>
-       const scriptURL = 'https://script.google.com/macros/s/AKfycbzVJ4Bb8MCaZeE97I7BGi3p-mwEt64aExWjdwPpEghkoaUjCA_8nkXWKATjkcDx-4fUdQ/exec';
+   <script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbzVJ4Bb8MCaZeE97I7BGi3p-mwEt64aExWjdwPpEghkoaUjCA_8nkXWKATjkcDx-4fUdQ/exec';
+  const form = document.forms['submit-to-google-sheet'];
+  const popup = document.getElementById("popup");
+  const showBtn = document.getElementById("showmsg");
 
+  function closePopup() {
+    popup.classList.remove('open-popup');
+    showBtn.style.visibility = "visible";
+  }
 
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
 
-        const form = document.forms['submit-to-google-sheet'];
-        const popup = document.getElementById("popup");
-        const showBtn = document.getElementById("showmsg");
-      
-        // Close popup
-        function closePopup() {
-          popup.classList.remove('open-popup');
-          showBtn.style.visibility = "visible";
-        }
-      
-        form.addEventListener('submit', function (e) {
-          e.preventDefault();
-      
-          // Validate required inputs
-          const inputs = form.querySelectorAll('input[required], textarea[required]');
-          for (let input of inputs) {
-            if (!input.value.trim()) {
-              alert("Please fill in all the fields.");
-              return;
-            }
-          }
-          showBtn.style.visibility = 'hidden';
-          popup.classList.add('open-popup');
-         form.reset();
-          fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-            .then(response => {
-              console.log('Success!', response);
-              
-            })
-            .catch(error => console.error('Error!', error.message));
-        });
-      </script>
+    const inputs = form.querySelectorAll('input[required], textarea[required]');
+    for (let input of inputs) {
+      if (!input.value.trim()) {
+        alert("Please fill in all the fields.");
+        return;
+      }
+    }
+
+    showBtn.style.visibility = 'hidden';
+
+    fetch(scriptURL, {
+      method: 'POST',
+      body: new FormData(form),
+    })
+      .then(response => {
+        console.log('Success!', response);
+        popup.classList.add('open-popup');
+        form.reset(); // ✅ Clear form only after successful submit
+      })
+      .catch(error => {
+        console.error('Error!', error.message);
+        alert("Oops! Something went wrong.");
+        showBtn.style.visibility = "visible";
+      });
+  });
+</script>
+
       
       <script src="index.js"></script>
 </body>
