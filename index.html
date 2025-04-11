@@ -254,54 +254,48 @@
     
 <!-- contact section -->
 <section class="contact" id="contact">
-    <h2 class="heading">Contact <span>Me</span> <span class="animate scroll" style="--i:1;"></span>  </h2>
-    <form name="submit-to-google-sheet" >
-        <div class="input-box">
-            <div class="input-field">
-                <input type="text" name="Name" placeholder="Full Name" required>
-                <span class="focus"></span>
-            </div>
-            
-            <div class="input-field">
-                <input type="email"  name="Email" placeholder="Email Adress" required>
-                <span class="focus"></span>
-            </div>
-            <span class="animate scroll" style="--i:2;"></span>
-        </div>
-        
-   <div class="input-box">
-         <div class="input-field">
-            <input type="number" name="Number" placeholder="Mobile Number"  required>
-            <span class="focus"></span>
-        </div>
-        
+    <h2 class="heading">Contact <span>Me</span></h2>
+    <form name="submit-to-google-sheet" id="contactForm">
+      <div class="input-box">
         <div class="input-field">
-            <input type="text" name="Subject" placeholder="Email Subject" required>
-            <span class="focus"></span>
+          <input type="text" name="Name" placeholder="Full Name" required>
+          <span class="focus"></span>
         </div>
-        <span class="animate scroll" style="--i:5;"></span>
-    </div>
-
-      <div class="textarea-field">
-        <textarea name="Message" id="" cols="30" rows="10" placeholder="Your Message" required></textarea>
-        <span class="focus"></span>
-        <span class="animate scroll" style="--i:7;"></span>
+        <div class="input-field">
+          <input type="email" name="Email" placeholder="Email Address" required>
+          <span class="focus"></span>
+        </div>
       </div>
-
+  
+      <div class="input-box">
+        <div class="input-field">
+          <input type="number" name="Number" placeholder="Mobile Number" required>
+          <span class="focus"></span>
+        </div>
+        <div class="input-field">
+          <input type="text" name="Subject" placeholder="Email Subject" required>
+          <span class="focus"></span>
+        </div>
+      </div>
+  
+      <div class="textarea-field">
+        <textarea name="Message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+        <span class="focus"></span>
+      </div>
+  
       <div class="btn-box btns">
-        <button type="submit" id="showmsg" class="btn" onclick="openPopup()">Submit</button>
-        <span class="animate scroll" style="--i:9;"></span>
-    
-    
-    <div class="popup" id="popup">
+        <button type="submit" id="showmsg" class="btn">Submit</button>
+      </div>
+  
+      <!-- Popup -->
+      <div class="popup" id="popup">
         <img src="https://github.com/AfreenKn/portfolio/assets/169296614/b5f6c4fd-e0ed-4ee0-a677-07d28adf7440" alt="">
-        <h2>  Thank You!</h2>
-        <p> Your details has been successfully submitted .Thanks!  </p>
-        <button type="button" onclick="closePopup()" >OK</button>
-    </div>
-</div>
-</form>
-</section>
+        <h2>Thank You!</h2>
+        <p>Your details have been successfully submitted. Thanks!</p>
+        <button type="button" onclick="closePopup()">OK</button>
+      </div>
+    </form>
+  </section>
     
 <!-- Footer design -->
 <footer class="footer">
@@ -316,24 +310,39 @@
 </footer>
      <!-- sheet contact save -->
     <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxoX8G6yblVBbllyOwyMo9mmYVcemDAPmEKqsS0i0niTxPAl-EZ3xark-mgtGS9ckzepA/exec'
-        const form = document.forms['submit-to-google-sheet']
-       
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxoX8G6yblVBbllyOwyMo9mmYVcemDAPmEKqsS0i0niTxPAl-EZ3xark-mgtGS9ckzepA/exec';
 
-
-        form.addEventListener('submit', e => {
-          e.preventDefault()
-          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => { 
-                console.log('Success!', response);
-                openPopup();
-                // window.location.reload(); 
-                
-        })
-            .catch(error => console.error('Error!', error.message))
-        })
-
-    
+        const form = document.forms['submit-to-google-sheet'];
+        const popup = document.getElementById("popup");
+        const showBtn = document.getElementById("showmsg");
+      
+        // Close popup
+        function closePopup() {
+          popup.classList.remove('open-popup');
+          showBtn.style.visibility = "visible";
+        }
+      
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+      
+          // Validate required inputs
+          const inputs = form.querySelectorAll('input[required], textarea[required]');
+          for (let input of inputs) {
+            if (!input.value.trim()) {
+              alert("Please fill in all the fields.");
+              return;
+            }
+          }
+          showBtn.style.visibility = 'hidden';
+          popup.classList.add('open-popup');
+         form.reset();
+          fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(response => {
+              console.log('Success!', response);
+              
+            })
+            .catch(error => console.error('Error!', error.message));
+        });
       </script>
       
       <script src="index.js"></script>
