@@ -2,18 +2,18 @@
 let menuIcon=document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
 
-let popup=document.getElementById('popup');
+// let popup=document.getElementById('popup');
 
         
-        function openPopup(){
-            document.getElementById("showmsg").style.visibility = "hidden";
-        popup.classList.add('open-popup');
-         }
+//         function openPopup(){
+//             document.getElementById("showmsg").style.visibility = "hidden";
+//         popup.classList.add('open-popup');
+//          }
 
-        function closePopup(){
-            document.getElementById("showmsg").style.visibility = "visible";
-    popup.classList.remove('open-popup');
-        }
+//         function closePopup(){
+//             document.getElementById("showmsg").style.visibility = "visible";
+//     popup.classList.remove('open-popup');
+//         }
 
 
 
