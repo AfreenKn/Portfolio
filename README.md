@@ -1,3 +1,33 @@
-# portfolio
-personal portfolio using html, css, javascript
-![tick copy](https://github.com/AfreenKn/portfolio/assets/169296614/b5f6c4fd-e0ed-4ee0-a677-07d28adf7440)
+# 💼 Personal Portfolio Website
+
+This is my personal portfolio website built using **HTML**, **CSS**, and **JavaScript**. It showcases my projects, skills, contact information, and a brief introduction about me.
+
+## 🌐 Live Demo
+🔗 [Visit Portfolio](https://afreenkn.github.io/Portfolio/)
+
+## 📌 Features
+- Fully responsive design using Flexbox and Grid
+- Project showcase section
+- Smooth scrolling and interactive UI
+- Contact and social links
+- Clean, modern design optimized for performance
+
+## 🛠 Tech Stack
+- HTML5
+- CSS3
+- JavaScript (Vanilla)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
