@@ -539,12 +539,34 @@ span{
   text-decoration: none;
 }
 
+
 .layer {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
+/* Medium screens */
+@media (max-width: 991px) {
+  .project-box {
+    width: calc(48% - 1rem);
+  }
+}
 
+/* Small screens */
+@media (max-width: 520px) {
+  .project-box {
+    width: 100%;
+  }
+
+  .project-box .content {
+    padding: 1rem;
+  }
+
+  .project-box img {
+    height: 180px;
+  }
+}
+/* 
 @media (max-width: 991px) {
   .project-box {
     width: calc(50% - 2rem);
@@ -555,7 +577,7 @@ span{
   .project-box {
     width: 100%;
   }
-}
+} */
 
 .contact{
     min-height: auto;
