@@ -550,6 +550,7 @@ span{
 @media (max-width: 991px) {
   .project-box {
     width: calc(48% - 1rem);
+    margin-bottom: 2rem; /* Add this line */
   }
 }
 
