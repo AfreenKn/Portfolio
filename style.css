@@ -461,69 +461,48 @@ span{
     border-radius: .3rem;
     background: var(--main-color);
 }
+
 /* Programming Languages */
-.skills-column:nth-child(1) .skills-content .progress:nth-child(1) .bar span { width: 90%; } /* Java */
-.skills-column:nth-child(1) .skills-content .progress:nth-child(2) .bar span { width: 70%; } /* JavaScript */
-.skills-column:nth-child(1) .skills-content .progress:nth-child(3) .bar span { width: 90%; } /* SQL */
-.skills-column:nth-child(1) .skills-content .progress:nth-child(4) .bar span { width: 90%; } /* HTML */
-.skills-column:nth-child(1) .skills-content .progress:nth-child(5) .bar span { width: 80%; } /* CSS */
-.skills-column:nth-child(1) .skills-content .progress:nth-child(6) .bar span { width: 65%; } /* C */
+.progress.java .bar span { width: 90%; }
+.progress.javascript .bar span { width: 70%; }
+.progress.sql .bar span { width: 90%; }
+.progress.html .bar span { width: 90%; }
+.progress.css .bar span { width: 80%; }
+.progress.c .bar span { width: 65%; }
 
 /* Frameworks & Tools */
-.skills-row:nth-child(2) .skills-column:nth-child(2) .skills-content .progress:nth-child(1) .bar span { width: 80%; } /* React.js */
-.skills-row:nth-child(2) .skills-column:nth-child(2) .skills-content .progress:nth-child(2) .bar span { width: 80%; } /* Node.js */
-.skills-row:nth-child(2) .skills-column:nth-child(2) .skills-content .progress:nth-child(3) .bar span { width: 60%; } /* Redux */
-.skills-row:nth-child(2) .skills-column:nth-child(2) .skills-content .progress:nth-child(4) .bar span { width: 80%; } /* Git */
-.skills-row:nth-child(2) .skills-column:nth-child(2) .skills-content .progress:nth-child(5) .bar span { width: 90%; } /* VS Code */
-.skills-row:nth-child(2) .skills-column:nth-child(2) .skills-content .progress:nth-child(6) .bar span { width: 85%; } /* NetBeans */
+.progress.react .bar span { width: 80%; }
+.progress.node .bar span { width: 80%; }
+.progress.redux .bar span { width: 60%; }
+.progress.git .bar span { width: 80%; }
+.progress.vscode .bar span { width: 90%; }
+.progress.netbeans .bar span { width: 85%; }
 
 /* Databases */
-.skills-row:nth-child(2) .skills-column:nth-child(1) .skills-content .progress:nth-child(1) .bar span { width: 85%; } /* MySQL */
-.skills-row:nth-child(2) .skills-column:nth-child(1) .skills-content .progress:nth-child(2) .bar span { width: 70%; } /* MongoDB */
+.progress.mysql .bar span { width: 85%; }
+.progress.mongodb .bar span { width: 70%; }
 
-/* .skills-column:nth-child(1) .skills-content .progress:nth-child(1) .bar span{
-    width: 90%;
-}
-.skills-column:nth-child(1) .skills-content .progress:nth-child(2) .bar span{
-    width: 70%;
-}
-.skills-column:nth-child(1) .skills-content .progress:nth-child(3) .bar span{
-    width: 90%;
-}
-.skills-column:nth-child(1) .skills-content .progress:nth-child(4) .bar span{
-    width:90%;
-}
-.skills-column:nth-child(1) .skills-content .progress:nth-child(5) .bar span{
-    width: 80%;
-}
-.skills-column:nth-child(1) .skills-content .progress:nth-child(6) .bar span{
-    width: 60%;
-}
-.skills-column:nth-child(1) .skills-content .progress:nth-child(7) .bar span{
-    width: 80%;
-}
-.skills-column:nth-child(1) .skills-content .progress:nth-child(8) .bar span{
-    width: 60%;
-}
 
-.skills-column:nth-child(2) .skills-content .progress:nth-child(1) .bar span{
-    width: 60%;
-}
-.skills-column:nth-child(2) .skills-content .progress:nth-child(2) .bar span{
-    width: 80%;
-}
-.skills-column:nth-child(2) .skills-content .progress:nth-child(3) .bar span{
-    width: 70%;
-}
-.skills-column:nth-child(2) .skills-content .progress:nth-child(4) .bar span{
-    width: 80%;
-}
-.skills-column:nth-child(2) .skills-content .progress:nth-child(5) .bar span{
-    width: 85%;
-}
-.skills-column:nth-child(2) .skills-content .progress:nth-child(6) .bar span{
-    width: 85%;
-} */
+/* .skills-column:nth-child(1) .skills-content .progress:nth-child(1) .bar span { width: 90%; } 
+.skills-column:nth-child(1) .skills-content .progress:nth-child(2) .bar span { width: 70%; } 
+.skills-column:nth-child(1) .skills-content .progress:nth-child(3) .bar span { width: 90%; } 
+.skills-column:nth-child(1) .skills-content .progress:nth-child(4) .bar span { width: 90%; } 
+.skills-column:nth-child(1) .skills-content .progress:nth-child(5) .bar span { width: 80%; } 
+.skills-column:nth-child(1) .skills-content .progress:nth-child(6) .bar span { width: 65%; } 
+
+
+.skills-row:nth-child(2) .skills-column:nth-child(2) .skills-content .progress:nth-child(1) .bar span { width: 80%; } 
+.skills-row:nth-child(2) .skills-column:nth-child(2) .skills-content .progress:nth-child(2) .bar span { width: 80%; } 
+.skills-row:nth-child(2) .skills-column:nth-child(2) .skills-content .progress:nth-child(3) .bar span { width: 60%; } 
+.skills-row:nth-child(2) .skills-column:nth-child(2) .skills-content .progress:nth-child(4) .bar span { width: 80%; } 
+.skills-row:nth-child(2) .skills-column:nth-child(2) .skills-content .progress:nth-child(5) .bar span { width: 90%; } 
+.skills-row:nth-child(2) .skills-column:nth-child(2) .skills-content .progress:nth-child(6) .bar span { width: 85%; } 
+
+
+.skills-row:nth-child(2) .skills-column:nth-child(1) .skills-content .progress:nth-child(1) .bar span { width: 85%; } 
+.skills-row:nth-child(2) .skills-column:nth-child(1) .skills-content .progress:nth-child(2) .bar span { width: 70%; }  */
+
+
 
 .project-box {
   position: relative;
