@@ -502,6 +502,15 @@
       });
   });
 </script>
+<p>👁️ Visitors: <span id="count">Loading...</span></p>
+
+<script>
+  fetch('https://api.countapi.xyz/update/afreen-portfolio/visits/?amount=1')
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById('count').innerText = data.value;
+    });
+</script>
 
       
       <script src="index.js"></script>
